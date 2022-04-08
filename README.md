@@ -1,7 +1,10 @@
 # DWHWithAWSRedshift
 
 Data Warehouse with RedShift
-Introduction
+create_table.py is where you'll create your fact and dimension tables for the star schema in Redshift.
+etl.py is where you'll load data from S3 into staging tables on Redshift and then process that data into your analytics tables on Redshift.
+sql_queries.py is where you'll define you SQL statements, which will be imported into the two other files above.
+
 
 A music streaming startup, Sparkify, has grown their user base and song database and want to move their processes and data onto the cloud. Their data resides in S3, in a directory of JSON logs on user activity on the app, as well as a directory with JSON metadata on the songs in their app.
 
@@ -34,11 +37,11 @@ AWS set-up
     Redshift Cluster set up for ETL pipeline:
 
     Cluster: 4x dc2.large nodes
-    Location: US-West-2 (as Project-3's AWS S3 bucket)
+    Location: US-West-2 
 
 Scripts
 
-    dwh.cfg: Fill in AWS acces key (KEY) and secret (SECRET) in
+    dwh.cfg: Fill in AWS acces key (KEY) and secret (SECRET) """It's been removed because of security reasons."""
     create_tables.py: Retrieve query from sql_queries which works create the DB to AWS Redshift
     etl.py :Process all the input data to the DB
     sql_queriespy: Contain create, drop, and insert queries which work on staging tables and analytics tables.
@@ -61,4 +64,7 @@ Analytics Tables:
     Dimensiontables:
 
         users: Users in the app songs: Songs in music database artists: Artists in music database time: Timestamps of records in songplays broken down into specific units
+
+
+
 
